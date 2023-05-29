@@ -6,7 +6,7 @@ import pickle
 import requests
 
 def get_similarity(new_df):
-    cv = CountVectorizer(max_features=50, stop_words='english')
+    cv = CountVectorizer(max_features=1000, stop_words='english')
     vectors = cv.fit_transform(new_df.tags).toarray()
     similarity = cosine_similarity(vectors)
     return similarity
